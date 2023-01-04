@@ -1,3 +1,3 @@
-# Funtatsic-Friends
+# Funtastic-Friends
 
 WELCOME!
