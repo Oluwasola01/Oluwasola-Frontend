@@ -1,1 +1,3 @@
 # Funtatsic-Friends
+
+WELCOME!
