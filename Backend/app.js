@@ -1,3 +1,6 @@
+//libraries
+
+
 const express = require('express')
 const app = express()
 const port = 3000
@@ -12,12 +15,19 @@ app.listen(port, () => {
 
 
 //access to MongoDB (set-up with MongoDB Atlas)
-
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://Group6:QZzc4rbmdX8Ab7pv@funtastic-friends.tuwfp0v.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
-  const collection = client.db("test").collection("devices");
+  const collection = client.db("sample_analytics").collection("accounts");
   // perform actions on the collection object
-  client.close();
+  //client.close();
+  // Find all documents in the sample_data collection
+  collection.find({}).toArray((err, docs) => {
+    if (err) throw err;
+    console.log(docs);
+    client.close();
+  });
 });
+
+
