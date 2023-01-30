@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import PersonalityQuest from './PersonalityQuest';
 
-function App() {console.log(PersonalityQuest()) 
+function App() { 
   return PersonalityQuest ();
   // return (
   //   <div className="App">
