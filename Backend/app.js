@@ -19,9 +19,14 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://Group6:QZzc4rbmdX8Ab7pv@funtastic-friends.tuwfp0v.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
-  const collection = client.db("sample_analytics").collection("accounts");
+  const collection = client.db("Funtastic-Friends").collection("Users");
   // perform actions on the collection object
   //client.close();
+  //Insert a document into the db
+  collection.insertOne({
+    username: "Alex",
+    password: "xyz"
+  });
   // Find all documents in the sample_data collection
   collection.find({}).toArray((err, docs) => {
     if (err) throw err;
